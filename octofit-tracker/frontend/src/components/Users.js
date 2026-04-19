@@ -4,7 +4,7 @@ function Users() {
   return (
     <ResourcePage
       title="Users"
-      description="User profiles fetched from the Django backend users endpoint."
+      description="User profiles fetched from the Django backend users endpoint. Codespaces endpoint: https://your-codespace-name-8000.app.github.dev/api/users/."
       resourcePath="users"
       emptyMessage="No users are available yet."
       fields={[

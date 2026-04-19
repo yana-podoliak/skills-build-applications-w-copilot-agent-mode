@@ -4,7 +4,7 @@ function Activities() {
   return (
     <ResourcePage
       title="Activities"
-      description="Recent activity records synced from the Django REST Framework backend."
+      description="Recent activity records synced from the Django REST Framework backend. Codespaces endpoint: https://your-codespace-name-8000.app.github.dev/api/activities/."
       resourcePath="activities"
       emptyMessage="No activities are available yet."
       fields={[

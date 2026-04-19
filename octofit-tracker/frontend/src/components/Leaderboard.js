@@ -4,7 +4,7 @@ function Leaderboard() {
   return (
     <ResourcePage
       title="Leaderboard"
-      description="Competitive rankings and scores from the backend leaderboard endpoint."
+      description="Competitive rankings and scores from the backend leaderboard endpoint. Codespaces endpoint: https://your-codespace-name-8000.app.github.dev/api/leaderboard/."
       resourcePath="leaderboard"
       emptyMessage="No leaderboard entries are available yet."
       fields={[

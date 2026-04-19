@@ -4,7 +4,7 @@ function Teams() {
   return (
     <ResourcePage
       title="Teams"
-      description="Team records and memberships loaded from the Django REST API."
+      description="Team records and memberships loaded from the Django REST API. Codespaces endpoint: https://your-codespace-name-8000.app.github.dev/api/teams/."
       resourcePath="teams"
       emptyMessage="No teams are available yet."
       fields={[
