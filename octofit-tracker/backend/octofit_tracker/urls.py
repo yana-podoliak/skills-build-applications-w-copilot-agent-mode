@@ -16,6 +16,7 @@ Including another URLconf
 import os
 
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import path, include
 from octofit_tracker.api.views import api_root
 
@@ -25,7 +26,12 @@ if codespace_name:
 else:
     base_url = "http://localhost:8000"
 
+
+def root_redirect(request):
+    return redirect('api-root')
+
 urlpatterns = [
+    path('', root_redirect, name='root'),
     path('admin/', admin.site.urls),
     path('api/', api_root, name='api-root'),
     path('api/', include('octofit_tracker.api.urls')),
