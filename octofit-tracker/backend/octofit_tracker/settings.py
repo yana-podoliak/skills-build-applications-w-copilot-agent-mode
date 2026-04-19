@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dym)i+-=28khdca=@ubch&nefwp83nwsul1sx%5hxjna+evw*h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'djongo',
     'octofit_tracker.api',
 ]
 
@@ -89,6 +90,9 @@ DATABASES = {
 }
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
 
 # Custom user model
 AUTH_USER_MODEL = 'api.User'
