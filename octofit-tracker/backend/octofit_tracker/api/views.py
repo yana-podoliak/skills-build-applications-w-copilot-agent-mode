@@ -1,17 +1,28 @@
-from rest_framework import viewsets, permissions
+import os
+
+from rest_framework import permissions, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import User, Team, Activity, LeaderboardEntry, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardEntrySerializer, WorkoutSerializer
 
+
+def get_api_base_url():
+    codespace_name = os.environ.get('CODESPACE_NAME')
+    if codespace_name:
+        return f"https://{codespace_name}-8000.app.github.dev/api/"
+    return 'http://localhost:8000/api/'
+
+
 @api_view(['GET'])
 def api_root(request, format=None):
+    base_url = get_api_base_url()
     return Response({
-        'users': '/api/users/',
-        'teams': '/api/teams/',
-        'activities': '/api/activities/',
-        'leaderboard': '/api/leaderboard/',
-        'workouts': '/api/workouts/',
+        'users': base_url + 'users/',
+        'teams': base_url + 'teams/',
+        'activities': base_url + 'activities/',
+        'leaderboard': base_url + 'leaderboard/',
+        'workouts': base_url + 'workouts/',
     })
 
 class UserViewSet(viewsets.ModelViewSet):
